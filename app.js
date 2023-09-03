@@ -2,6 +2,7 @@ const http = require ('http');
 
 const hostname = '0.0.0.0';
 const port = process.env.PORT;
+const version = process.env.VERSION;
 
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
@@ -10,7 +11,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {
-    console.log(`Server runnign at http://${hostname}:${port}/`);
+    console.log(`Server runnign at http://${hostname}:${port}/ and version ${version}`);
 });
 
 process.on('SIGINT', function(){
